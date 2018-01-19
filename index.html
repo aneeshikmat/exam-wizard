@@ -804,52 +804,18 @@
         <!-- Scripts -->
         <script src="js/jquery.js"></script><!-- Required -->
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/examwizard.js"></script><!-- Required -->
+        <script src="js/examwizard.min.js"></script><!-- Required -->
 
         <script>
             var examWizard = $.fn.examWizard({
                 finishOption: {
                     enableModal: true,
                     enableFinishButtonAtQNum: 3,
-                    callBack: function(){
-                        console.log(5);
-                    },
                 },
                 quickAccessOption: {
                     quickAccessPagerItem: 9,
-                    nextCallBack: function(){
-                        console.log(1);
-                    },
-                    prevCallBack: function(){
-                        console.log(2);
-                    },
-                },
-                markOption: {
-                    enableMarked: true,
-                    markCallBack: function(){
-                        console.log(6);
-                    },
-                    unMarkCallBack: function(){
-                        console.log(7);
-                    },
-                },
-                nextOption:{
-                    callBack: function(){
-                        console.log(examWizard.getTotalOfAnswerdValue());
-                    },
-                },
-                prevOption: {
-                    callBack: function(){
-                        console.log(4);
-                    },
-                    breakPrev: function(){
-                        return false;
-                    },
                 },
             });
-            
-            
-
         </script>
     </body>
 </html>

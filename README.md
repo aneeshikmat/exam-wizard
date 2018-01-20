@@ -189,9 +189,56 @@ var examWizard = $.fn.examWizard({
 });
 ```
 
-### Cookie
+### Prev & Next Buttons
+```
+<!-- Html Button Template -->
 
-To save user answerd when he refresh page or any other case, you can use cookies, and this is configration to use cookies
+<div class="">
+    <a href="javascript:void(0);" id="back-to-prev-question" class="btn btn-success disabled">
+        Back
+    </a>
+</div>
+<div class="">
+     ----
+     <span id="current-question-number-label">1</span>
+     ----
+</div>
+<div class="">
+    <a href="javascript:void(0);" id="go-to-next-question" class="btn btn-success">
+        Next
+    </a>
+</div>
+
+```
+
+A) #back-to-prev-question selector to back to prev question
+
+B) #go-to-next-question selector to got to next question
+
+C) #current-question-number-label updated question number when user click on next, back or marked link(in another way its display a current question number).
+
+And now let us to see js option:
+
+```
+var examWizard = $.fn.examWizard({
+    nextOption: {
+                    allowadNext:            true, // Direct conf to enable or disable next button
+                    callBack:               function(){}, // Callback function trigger after next action done
+                    breakNext:             function(){return false;}, // Pre execute function to execute code and return bool to break next or no. (by default its return false thats mean next action will not break);
+                },
+                prevOption: {
+                    allowadPrev:            true,// Direct conf to enable or disable prev button
+                    allowadPrevOnQNum:      2,// This option give Ability to set when Prev button will be enabled.(by default will be enable on question 2).
+                    callBack:               function(){},// Callback function trigger after prev action done
+                    breakPrev:              function(){return false;},// Pre execute function to execute code and return bool to break prev action or no. (by default its return false thats mean prev action will not break);
+                },
+});
+
+```
+
+### Cookies
+
+To save users answerd when he refresh page or any other case, you can use cookies, and this is configration to use cookies
 
 ```
 var examWizard = $.fn.examWizard({

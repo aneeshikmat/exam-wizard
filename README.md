@@ -119,9 +119,8 @@ Quick access section its an simple layout useful to display answers input by use
 
 The main item in quick Access is:
 
-A) #quick-access-section in div wrapper, and you can update this id from examVarible option.
-
-B) .question-response-rows this class required in every row in quick access, and data-question is required too, its has an question id.
+A) #quick-access-section in div wrapper.
+B) .question-response-rows this class required in every row in quick access, and data-question is required too, its has an question number.
 
 C) .question-response-rows-value this class has an value for each question, defualt value when nothing select is "-".
 
@@ -136,15 +135,9 @@ And now, let us see full configration for quickaccess
 ```
 var examWizard = $.fn.examWizard({
     quickAccessOption: {
-      quickAccessSection:     '#quick-access-section',// Quick Access Section
       enableAccessSection:    true,// Enable or disable Quick Access
       quickAccessPagerItem:   'Full',// Number of rows in quick access, by default is full and you can send your number like 9
-      quickAccessInfoSelector:'#quick-access-info', // Quick Info Selector 
-      quickAccessPrevSelector:'#quick-access-prev', // Prev Quick Access Selector
-      quickAccessNextSelector:'#quick-access-next',// Next Quick Access Selector
       quickAccessInfoSeperator:'/',// the sperator for quick access information the default is /. (1/2)
-      quickAccessRow:         '.question-response-rows',// Quick Access Row Selector
-      quickAccessRowValue:    '.question-response-rows-value',// Quick Access Row Value Selector
       quickAccessDefaultRowVal:'-', // Default Row Value when value is empty
       quickAccessRowValSeparator: ', ', // Default Value Sperator for multible value
       nextCallBack            :function(){}, // CallBack Function when click on next quick access callBack
@@ -152,3 +145,47 @@ var examWizard = $.fn.examWizard({
     }
 });
 ```
+
+### Marked Buttons
+Its an button used to display marked link on quick access, its easy way to let user to back to question if he like to update, or answer.
+
+```
+<!-- Mark Button Template -->
+
+<div class="mark-unmark-wrapper" data-question="1">
+    <a href="javascript:void(0);" class="mark-question btn btn-success" data-question="1">
+        <b>MARK</b>
+    </a>
+    <a href="javascript:void(0);" class="hidden unmark-question btn btn-success" data-question="1">
+        <b>UNMARK</b>
+    </a>
+</div>
+<div class="mark-unmark-wrapper hidden" data-question="2">
+    <a href="javascript:void(0);" class="mark-question btn btn-success" data-question="2">
+        <b>MARK</b>
+    </a>
+    <a href="javascript:void(0);" class="hidden unmark-question btn btn-success" data-question="2">
+        <b>UNMARK</b>
+    </a>
+</div>
+
+```
+A) .mark-unmark-wrapper is the main selector wrapper for mark/unmark button, data-question has an question number.(other wrapper will contaion hidden class).
+
+B) .mark-question is the selector for trigger mark action, data-question has an question number.
+
+C) .unmark-question is the selector for trigger unmark action, data-question has an question number. (by default will has hidden class).
+
+And This is JS Option:
+
+```
+var examWizard = $.fn.examWizard({
+    markOption: {
+        markedLabel:            'Marked',// This is Link lable will be display on quick access (look to screen shot).
+        enableMarked:           true,// Enalbe or Disable mark button, by default its enable
+        markCallBack:           function(){},// CallBack Function when click on mark button
+        unMarkCallBack:         function(){},// CallBack Function when click on unmark button
+    },
+});
+```
+

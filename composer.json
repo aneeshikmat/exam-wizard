@@ -13,6 +13,8 @@
     "Questionnaires",
     "surveys"
   ],
+  "prefer-stable": true,
+  "version": "1.0.0-a"
   "authors": [
     {
       "name": "Anees Hikmat",

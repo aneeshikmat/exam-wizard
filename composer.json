@@ -1,0 +1,25 @@
+{
+  "name": "aneeshikmat/exam-wizard",
+  "description": "Exam Wizard Jquery Plugin to Handling Examinations, Questions, Answers Easily, its helpful to build exams, surveys, questioners",
+  "type": "jQuery-function",
+  "license": "MIT",
+  "keywords": [
+    "jQuery",
+    "Examinations",
+    "Exam-Wizard",
+    "Plugin",
+    "Questions",
+    "Questions Step",
+    "Questioners",
+    "surveys"
+  ],
+  "authors": [
+    {
+      "name": "Anees Hikmat",
+      "email": "aneeshikmat@gmail.com"
+    }
+  ],
+  "require": {
+        "jquery":"*"
+  }
+}

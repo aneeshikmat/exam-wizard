@@ -38,3 +38,30 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 `php composer.phar require --prefer-dist aneeshikmat/exam-wizard "*@dev"`
+
+## Usage
+To use this plugin you need to write your code like this template(in basic use):
+
+```
+<!-- Html Template -->
+<form id="examwizard-question"><!-- examwizard-question #id selector for exam form(you can update it by option -->
+  <div class="yourClass" data-question="1">
+    ------
+    <input type="radio" data-alternatetype="radio" name="fieldName[0]" data-alternateName="answer[0]" data-alternateValue="A" value="1"/>
+    ------
+  </div>
+    <div class="yourClass hidden" data-question="2"><!-- We Add hidden class here -->
+    ------
+    <input type="radio" data-alternatetype="radio" name="fieldName[1]" data-alternateName="answer[1]" data-alternateValue="A" value="1"/>
+    ------
+  </div>
+</form>
+
+<!-- Scripts -->
+<script src="js/jquery.js"></script><!-- Required -->
+<script src="js/examwizard.min.js"></script><!-- Required -->
+
+<script>
+    var examWizard = $.fn.examWizard();
+</script>
+```

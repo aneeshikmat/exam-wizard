@@ -94,5 +94,61 @@ As you see, its very simple, and now we will be explaning this code, and then go
 5) #totalOfQuestion field is an hidden field save total of question number, its most set to can be groubing question. (in this example we has an 18 question, so that exam-wizard will handling 18 question only.
 6) #markedQuestion field is an hidden field save all marked value, default value is empty array "[]". (if you disabled marks option, you dont need this field).
   
+## Quick Access
+Quick access menu its an simple layout useful to display answers input by users and marked links, this option is enabled by default.
+```
+<!-- Quick Access Html Template -->
+<div class="col-xs-3" id="quick-access-section">
+  <table> <!-- You can use table, or any other html tag like div, spans..etc -->
+    <tr class="question-response-rows" data-question="1">
+        <td>1</td>
+        <td class="question-response-rows-value">-</td>
+    </tr>
+    <tr class="question-response-rows" data-question="2">
+        <td>2</td>
+        <td class="question-response-rows-value">-</td>
+    </tr>
+  </table>
+  <div class="col-xs-12">
+      <a href="javascript:void(0)" class="btn btn-success" id="quick-access-prev">< Back</a>
+      <span class="alert alert-info" id="quick-access-info"></span>
+      <a href="javascript:void(0)" class="btn btn-success" id="quick-access-next">Next ></a>
+  </div>
+</div>
+```
+
+The main item in quick Access is:
+
+A) #quick-access-section in div wrapper, and you can update this id from examVarible option.
+
+B) .question-response-rows this class required in every row in quick access, and data-question is required too, its has an question id.
+
+C) .question-response-rows-value this class has an value for each question, defualt value when nothing select is "-".
+
+D) .quick-access-prev is quick access class to do back action if we groubing rows(like screen shot)
+
+E) .quick-access-next is quick access class to do next action if we groubing rows(like screen shot)
+
+F) #quick-access-info This selector will has an information about quick access page number of total like 1/2(look at screen shot).
 
 
+And now, let us see full configration for quickaccess
+```
+var examWizard = $.fn.examWizard({
+    quickAccessOption: {
+      quickAccessSection:     '#quick-access-section',// Quick Access Section
+      enableAccessSection:    true,// Enable or disable Quick Access
+      quickAccessPagerItem:   'Full',// Number of rows in quick access, by default is full and you can send your number like 9
+      quickAccessInfoSelector:'#quick-access-info', // Quick Info Selector 
+      quickAccessPrevSelector:'#quick-access-prev', // Prev Quick Access Selector
+      quickAccessNextSelector:'#quick-access-next',// Next Quick Access Selector
+      quickAccessInfoSeperator:'/',// the sperator for quick access information the default is /. (1/2)
+      quickAccessRow:         '.question-response-rows',// Quick Access Row Selector
+      quickAccessRowValue:    '.question-response-rows-value',// Quick Access Row Value Selector
+      quickAccessDefaultRowVal:'-', // Default Row Value when value is empty
+      quickAccessRowValSeparator: ', ', // Default Value Sperator for multible value
+      nextCallBack            :function(){}, // CallBack Function when click on next quick access callBack
+      prevCallBack            :function(){}, // CallBack Function when click on prev quick access callBack
+    }
+});
+```

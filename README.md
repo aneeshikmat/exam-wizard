@@ -26,6 +26,8 @@ Exam Wizard Jquery Plugin to Handling Examinations, Questions, Answers Easily, i
 17. Ability to retrieve total of Remaining questions from examVariable directly.
 18. Ability to retrieve current question number from examVariable directly.
 19. You will work on exam wizard with data-attribute for name, values and types, and this give you a power to keep real name, value and type without change, its helpfual if you like to use it in exsisting form, with fremworks, or cms.
+20. This plugin work on input type, select and textarea.
+21. This plugin work on multiple value for select and checkbox fields.
 
 ## Dependency
 1. jQuery Library

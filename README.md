@@ -29,3 +29,10 @@ Exam Wizard Jquery Plugin to Handling Examinations, Questions, Answers Easily, i
 
 ## Dependency
 1. jQuery Library
+
+## Installation:
+The preferred way to install this extension is through [composer](https://getcomposer.org/).
+
+Either run
+
+`php composer.phar require --prefer-dist aneeshikmat/exam-wizard "*@dev"`

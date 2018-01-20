@@ -16,16 +16,16 @@ Exam Wizard Jquery Plugin to Handling Examinations, Questions, Answers Easily, i
 7. Ability to enable/disable mark questions, quick access, finish modal.
 8. Ability to update selectors for actions control.
 9. Ability to trigger callback function on every main action.
-10.Ability to prevent next/prev button dependance on pre-trigger-funtion.
-11.Ability To Save All Users Answers in cookies.
-12.Ability to add auth key for cookie to keep data safe for every user/exam dependance of your rules.
-13.Ability to retrieve all marked value from examVariable directly.
-14.Ability to retrieve all answerd value from examVariable directly with options to retrive all form data or just questions data, also we can get data sorted as a groub or with normal array.
-15.Ability to retrieve total of marked questions from examVariable directly.
-16.Ability to retrieve total of answerd questions from examVariable directly.
-17.Ability to retrieve total of Remaining questions from examVariable directly.
-18.Ability to retrieve current question number from examVariable directly.
-19.You will work with exam wizard with data-attribute for name, values and types, and this give you a power to keep real name, value and type without change, its helpfual if you like to use it in exsisting form, with fremworks, or cms.
+10. Ability to prevent next/prev button dependance on pre-trigger-funtion.
+11. Ability To Save All Users Answers in cookies.
+12. Ability to add auth key for cookie to keep data safe for every user/exam dependance of your rules.
+13. Ability to retrieve all marked value from examVariable directly.
+14. Ability to retrieve all answerd value from examVariable directly with options to retrive all form data or just questions data, also we can get data sorted as a groub or with normal array.
+15. Ability to retrieve total of marked questions from examVariable directly.
+16. Ability to retrieve total of answerd questions from examVariable directly.
+17. Ability to retrieve total of Remaining questions from examVariable directly.
+18. Ability to retrieve current question number from examVariable directly.
+19. You will work with exam wizard with data-attribute for name, values and types, and this give you a power to keep real name, value and type without change, its helpfual if you like to use it in exsisting form, with fremworks, or cms.
 
 ## Dependency
 1. jQuery Library

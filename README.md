@@ -83,9 +83,15 @@ As you see, its very simple, and now we will be explaning this code, and then go
 ```
 2) Wrapper <div> has an data-question attribute with question number value.
 3) Question Field most be write with this rule:
-  a. data-alternatetype: this data attribute has an field type.(required)
+  a. data-alternatetype: this data attribute has an field type.(required).
+  
   b. data-alternateName: this data attribute has an alternate name, this is useful to keep field name without any update, its useful if you need to update old form, use in cms or fremwork, alternateName most has value like this rule "answer[question-number - 1]" so that if we on question 1 thats mean alternateName="answerd[0]".(required)
-  c. data-alternateValue: this data attribute has an alternate value for field, its useful on quick access menu, its will be display a readable value for user, for example if field value is 1 and data-alternateValue="A" then the displayed value will be is "A" not "1".
+  
+  c. data-alternateValue: this data attribute has an alternate value for field, its useful on quick access menu, its will be display a readable value for user, for example if field value is 1 and data-alternateValue="A" then the displayed value will be is "A" not "1".(Optional)
+  
+4) #currentQuestionNumber field is an hidden field save current question number, init value = 1.
+5) #totalOfQuestion field is an hidden field save total of question number, its most set to can be groubing question. (in this example we has an 18 question, so that exam-wizard will handling 18 question only.
+6) #markedQuestion field is an hidden field save all marked value, default value is empty array "[]". (if you disabled marks option, you dont need this field).
   
 
 

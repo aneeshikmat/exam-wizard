@@ -55,6 +55,12 @@ To use this plugin you need to write your code like this template(in basic use):
     <input type="radio" data-alternatetype="radio" name="fieldName[1]" data-alternateName="answer[1]" data-alternateValue="A" value="1"/>
     ------
   </div>
+  
+  <!-- Hidden field, save current question number, marked values, total of question -->
+  <input type="hidden" value="1" id="currentQuestionNumber" name="currentQuestionNumber" />
+  <input type="hidden" value="18" id="totalOfQuestion" name="totalOfQuestion" />
+  <input type="hidden" value="[]" id="markedQuestion" name="markedQuestions" />
+
 </form>
 
 <!-- Scripts -->
@@ -65,3 +71,21 @@ To use this plugin you need to write your code like this template(in basic use):
     var examWizard = $.fn.examWizard();
 </script>
 ```
+
+As you see, its very simple, and now we will be explaning this code, and then go to display all option may be use to help us.
+1) Form tag must be has an #id selector, the default selector is examwizard-question, and you can change it by set it in examwizard configration like this: 
+```
+<script>
+    var examWizard = $.fn.examWizard({
+      formSelector: "#new-examwizard-question",
+    });
+</script>
+```
+2) Wrapper <div> has an data-question attribute with question number value.
+3) Question Field most be write with this rule:
+  a. data-alternatetype: this data attribute has an field type.(required)
+  b. data-alternateName: this data attribute has an alternate name, this is useful to keep field name without any update, its useful if you need to update old form, use in cms or fremwork, alternateName most has value like this rule "answer[question-number - 1]" so that if we on question 1 thats mean alternateName="answerd[0]".(required)
+  c. data-alternateValue: this data attribute has an alternate value for field, its useful on quick access menu, its will be display a readable value for user, for example if field value is 1 and data-alternateValue="A" then the displayed value will be is "A" not "1".
+  
+
+

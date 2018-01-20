@@ -3,5 +3,8 @@
     @email: aneeshikmat@gmail.com
 */
 
-
+/* Hidden class most be use for hide element is examwizerd, usally it's exsists by defualt in bootstrap' */
+.hidden {
+    display: none!important;
+}
 

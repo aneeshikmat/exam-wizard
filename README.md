@@ -94,7 +94,7 @@ As you see, its very simple, and now we will be explaning this code, and then go
 5) #totalOfQuestion field is an hidden field save total of question number, its most set to can be groubing question. (in this example we has an 18 question, so that exam-wizard will handling 18 question only.
 6) #markedQuestion field is an hidden field save all marked value, default value is empty array "[]". (if you disabled marks option, you dont need this field).
   
-# Quick Access
+### Quick Access
 Quick access section its an simple layout useful to display answers input by users and marked links, this option is enabled by default.
 ```
 <!-- Quick Access Html Template -->

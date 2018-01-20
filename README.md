@@ -189,3 +189,17 @@ var examWizard = $.fn.examWizard({
 });
 ```
 
+### Cookie
+
+To save user answerd when he refresh page or any other case, you can use cookies, and this is configration to use cookies
+
+```
+var examWizard = $.fn.examWizard({
+    cookiesOption: {
+                enableCookie:           false,// For enable or disable cookie, by default is disabled
+                cookieKey:              '',// Cookie Key is usefal if your exam may be run from many users in the same device or if one user has the many exams or both cases. 
+                expires:                1*24*60*60*1000 // cookies expire data, by default its 1 day
+            }
+});
+```
+

@@ -10,9 +10,11 @@
     "Plugin",
     "Questions",
     "Questions Step",
-    "Questioners",
+    "Questionnaires",
     "surveys"
   ],
+  "prefer-stable": true,
+  "version": "1.0.0-a",
   "authors": [
     {
       "name": "Anees Hikmat",
@@ -20,6 +22,6 @@
     }
   ],
   "require": {
-        "jquery":"*"
+        "components/jquery":"*"
   }
 }

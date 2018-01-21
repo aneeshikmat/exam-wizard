@@ -341,3 +341,171 @@ var values = examWizard.getCurrentQuestionNumber();
 var values = examWizard.getAllFormData();
 
 ```
+
+## Full Html Template
+
+```
+<!-- Html Template -->
+<form id="examwizard-question"><!-- examwizard-question #id selector for exam form(you can update it by option -->
+  <div class="yourClass" data-question="1">
+    ------
+    <input type="radio" data-alternatetype="radio" name="fieldName[0]" data-alternateName="answer[0]" data-alternateValue="A" value="1"/>
+    ------
+  </div>
+    <div class="yourClass hidden" data-question="2"><!-- We Add hidden class here -->
+    ------
+    <input type="radio" data-alternatetype="radio" name="fieldName[1]" data-alternateName="answer[1]" data-alternateValue="A" value="1"/>
+    ------
+  </div>
+  
+  <!-- Hidden field, save current question number, marked values, total of question -->
+  <input type="hidden" value="1" id="currentQuestionNumber" name="currentQuestionNumber" />
+  <input type="hidden" value="18" id="totalOfQuestion" name="totalOfQuestion" />
+  <input type="hidden" value="[]" id="markedQuestion" name="markedQuestions" />
+
+</form>
+
+<!-- Quick Access Html Template -->
+<div class="col-xs-3" id="quick-access-section">
+  <table> <!-- You can use table, or any other html tag like div, spans..etc -->
+    <tr class="question-response-rows" data-question="1">
+        <td>1</td>
+        <td class="question-response-rows-value">-</td>
+    </tr>
+    <tr class="question-response-rows" data-question="2">
+        <td>2</td>
+        <td class="question-response-rows-value">-</td>
+    </tr>
+  </table>
+  <div class="col-xs-12">
+      <a href="javascript:void(0)" class="btn btn-success" id="quick-access-prev">< Back</a>
+      <span class="alert alert-info" id="quick-access-info"></span>
+      <a href="javascript:void(0)" class="btn btn-success" id="quick-access-next">Next ></a>
+  </div>
+</div>
+
+<div class="mark-unmark-wrapper" data-question="1">
+    <a href="javascript:void(0);" class="mark-question btn btn-success" data-question="1">
+        <b>MARK</b>
+    </a>
+    <a href="javascript:void(0);" class="hidden unmark-question btn btn-success" data-question="1">
+        <b>UNMARK</b>
+    </a>
+</div>
+<div class="mark-unmark-wrapper hidden" data-question="2">
+    <a href="javascript:void(0);" class="mark-question btn btn-success" data-question="2">
+        <b>MARK</b>
+    </a>
+    <a href="javascript:void(0);" class="hidden unmark-question btn btn-success" data-question="2">
+        <b>UNMARK</b>
+    </a>
+</div>
+
+<!-- Html Button Template -->
+
+<div class="">
+    <a href="javascript:void(0);" id="back-to-prev-question" class="btn btn-success disabled">
+        Back
+    </a>
+</div>
+<div class="">
+     ----
+     <span id="current-question-number-label">1</span>
+     ----
+</div>
+<div class="">
+    <a href="javascript:void(0);" id="go-to-next-question" class="btn btn-success">
+        Next
+    </a>
+</div>
+
+<!-- Finish Button Template -->
+
+<div class="">
+    <a href="javascript:void(0);" id="finishExams" class="btn btn-success disabled">
+        <b>Finish</b>
+    </a>
+</div>
+
+<!-- Scripts -->
+<script src="js/jquery.js"></script><!-- Required -->
+<script src="js/examwizard.min.js"></script><!-- Required -->
+
+<script>
+    var examWizard = $.fn.examWizard({
+      // Your Configration
+    });
+</script>
+
+```
+
+## All examWizard Configration
+
+```
+<script>
+var examWizard = $.fn.examWizard({
+    currentQuestionSelector:'#currentQuestionNumber',
+    totalOfQuestionSelector:'#totalOfQuestion',
+    formSelector:           '#examwizard-question',
+    currentQuestionLabel:   '#current-question-number-label',
+    alternateNameAttr:      'data-alternateName',
+    alternateValueAttr:     'data-alternateValue',
+    alternateTypeAttr:      'data-alternateType',
+    quickAccessOption: {
+        quickAccessSection:     '#quick-access-section',
+        enableAccessSection:    true,
+        quickAccessPagerItem:   'Full',
+        quickAccessInfoSelector:'#quick-access-info',
+        quickAccessPrevSelector:'#quick-access-prev',
+        quickAccessNextSelector:'#quick-access-next',
+        quickAccessInfoSeperator:'/',
+        quickAccessRow:         '.question-response-rows',
+        quickAccessRowValue:    '.question-response-rows-value',
+        quickAccessDefaultRowVal:'-',
+        quickAccessRowValSeparator: ', ',
+        nextCallBack            :function(){},
+        prevCallBack            :function(){},
+    },
+    nextOption: {
+        nextSelector:           '#go-to-next-question',
+        allowadNext:            true,
+        callBack:               function(){},
+        breakNext:             function(){return false;},
+    },
+    prevOption: {
+        prevSelector:           '#back-to-prev-question', 
+        allowadPrev:            true,
+        allowadPrevOnQNum:      2,
+        callBack:               function(){},
+        breakPrev:              function(){return false;},
+    },
+    finishOption: {
+        enableAndDisableFinshBtn:true,
+        enableFinishButtonAtQNum:'onLastQuestion',
+        finishBtnSelector:      '#finishExams',
+        enableModal:            false,
+        finishModalTarget:      '#finishExamsModal',
+        finishModalAnswerd:     '.finishExams-total-answerd',
+        finishModalMarked:      '.finishExams-total-marked',
+        finishModalRemaining:   '.finishExams-total-remaining',
+        callBack:               function(){}
+    },
+    markOption: {
+        markSelector:           '.mark-question',
+        unmarkSelector:         '.unmark-question',
+        markedLinkSelector:     '.marked-link',
+        markedQuestionsSelector:'#markedQuestion',
+        markedLabel:            'Marked',
+        markUnmarkWrapper:      '.mark-unmark-wrapper',
+        enableMarked:           true,
+        markCallBack:           function(){},
+        unMarkCallBack:         function(){},
+    },
+    cookiesOption: {
+        enableCookie:           false,
+        cookieKey:              '',
+        expires:                1*24*60*60*1000 // 1 day
+    }
+});
+</script>
+```

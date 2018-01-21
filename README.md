@@ -439,7 +439,7 @@ var values = examWizard.getAllFormData();
 
 ```
 
-## All examWizard Configration
+## Full examWizard Configration
 
 ```
 <script>

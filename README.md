@@ -236,6 +236,66 @@ var examWizard = $.fn.examWizard({
 
 ```
 
+### Finish Button
+```
+<!-- Finish Button Template -->
+
+<div class="">
+    <a href="javascript:void(0);" id="finishExams" class="btn btn-success disabled">
+        <b>Finish</b>
+    </a>
+</div>
+
+<!-- If You enable modal -->
+<div class="modal fade" id="finishExamsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <span>Total Of Answerd Quastion</span>
+                            <span class="finishExams-total-answerd"></span>
+                        </div>
+                        <div>
+                            <span>Total Of Marked Quastion</span>
+                            <span class="finishExams-total-marked"></span>
+                        </div>
+                        <div>
+                            <span>Total Of Remaining Quastion</span>
+                            <span class="finishExams-total-remaining"></span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+```
+A) #finishExams the default selector to trigger finishing exam.
+b) you need to add disabled class for button if you would like to prevent an finsih action before exam end.
+c) If you enable modal when click on finish button, you need to set #finishExamsModal for modal, also you can display summery of results by adding .finishExams-total-answerd, .finishExams-total-marked, .finishExams-total-remaining.
+
+Let us see our js configration:
+
+```
+var examWizard = $.fn.examWizard({
+    finishOption: {
+        enableAndDisableFinshBtn:true, // Direct variable to enable or disable finsih button, by defaults its enable
+        enableFinishButtonAtQNum:'onLastQuestion', // By default finsih button will be enable when user on last question
+        enableModal:            false, // This bool to trigger modal when click on finish button.
+        callBack:               function(){} // Call Back function will be trigger after click on finish button
+    },
+});
+
+
+```
+
 ### Cookies
 
 To save users answerd when he refresh page or any other case, you can use cookies, and this is configration to use cookies

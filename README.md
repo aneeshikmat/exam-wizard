@@ -278,7 +278,9 @@ var examWizard = $.fn.examWizard({
 
 ```
 A) #finishExams the default selector to trigger finishing exam.
+
 b) you need to add disabled class for button if you would like to prevent an finsih action before exam end.
+
 c) If you enable modal when click on finish button, you need to set #finishExamsModal for modal, also you can display summery of results by adding .finishExams-total-answerd, .finishExams-total-marked, .finishExams-total-remaining.
 
 Let us see our js configration:
@@ -310,3 +312,32 @@ var examWizard = $.fn.examWizard({
 });
 ```
 
+### Getter Function (Return value after each trigger).
+
+```
+var examWizard = $.fn.examWizard({
+--------
+});
+
+// Returned All marked question
+var values = examWizard.getMarkedQuestion(); 
+
+// Return All Answerd/form data, groupingData used to collect data as object or arrays, fieldWithAlternateNameOnly to get only question value...both option by default is true.
+var values = examWizard.getAnswerdValue(groupingData = true, fieldWithAlternateNameOnly = true);
+
+// Return Total of Answerd Question
+var values = examWizard.getTotalOfAnswerdValue();
+
+// Return total of marked values
+var values = examWizard.getTotalOfMarkedValue();
+
+// Return Total Of Remaining Question
+var values = examWizard.getTotalOfRemainingValue();
+
+// Return current question number
+var values = examWizard.getCurrentQuestionNumber();
+
+// Return All Form Data
+var values = examWizard.getAllFormData();
+
+```

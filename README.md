@@ -311,6 +311,7 @@ var examWizard = $.fn.examWizard({
             }
 });
 ```
+##### Note: To work truthly for cookie, you need to run page as a web root style.
 
 ### Getter Function (Return value after each trigger).
 

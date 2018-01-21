@@ -814,6 +814,7 @@
         
         // If cookie is enable load answers
         if(settings.cookiesOption.enableCookie){
+            $(settings.currentQuestionSelector).val(1);
             loadAnswersFromCookies();
         }
         
@@ -867,7 +868,7 @@
                     markButton.addClass('hidden');
                     unmarkButton.removeClass('hidden');
                 }
-            }
+            }     
         }
         
         /*

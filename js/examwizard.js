@@ -325,6 +325,7 @@
         $(document).on('change select keyup', '['+settings.alternateNameAttr+']',function () {
             var currentQNumber  = _getCurrentQuestionNumber();
             var answerdValue    = getAllAnswerdValue(true, true, $(this).attr('name'));
+            var markedValues    = _getMarkedValue();
             
             if(!$.isEmptyObject(answerdValue)){
                 _convertAnswerdToReadAnswerd(answerdValue);
@@ -333,7 +334,12 @@
                     handlingCookies(answerdValue);
                 }
             }else{
-                setQuickAccessResponseValue(null, currentQNumber);
+                var fieldVal = null;
+                if(settings.markOption.enableMarked && markedValues.indexOf(currentQNumber) > -1){
+                    fieldVal = getMarkedLink(currentQNumber);
+                }
+
+                setQuickAccessResponseValue(fieldVal, currentQNumber);
                 // If cookie enable, delete cookie when its null 
                 if(settings.cookiesOption.enableCookie){
                     deleteCookie($(this).attr('name'));

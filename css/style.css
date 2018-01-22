@@ -17,3 +17,18 @@
     box-shadow: none;
     opacity: .65;
 }
+
+
+/* Temp Style Just For demo */
+body {
+    padding-bottom: 60px;
+}
+
+form {
+    background: #f9f9f9;
+    padding: 20px;
+}
+
+textarea{
+    max-width: 100%;
+}

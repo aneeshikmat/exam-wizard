@@ -513,3 +513,9 @@ var examWizard = $.fn.examWizard({
 });
 </script>
 ```
+
+## Browsers Support
+In general its work in all modern browser. 
+Tested on (Chrome, Firefox, Microsoft Edge).
+
+And Its Not Support for Old version of browser & Internet Exploler.

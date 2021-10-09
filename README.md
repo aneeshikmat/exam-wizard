@@ -3,10 +3,7 @@ Exam Wizard Jquery Plugin to Handling Examinations, Questions, Answers Easily, i
 
 ## Screenshot from Simple Demo
 
-![Yii2 timeDownCounter screenshot_t1](http://2nees.com/github/examWizard/examwizard.png)
-
-## Live Demo
-[Live Demo For Exam Wizard in examwizard.2nees.com](http://2nees.com/github/examWizard/)
+![Yii2 timeDownCounter screenshot_t1](https://2nees.com/img/github/exam1.png)
 
 ## Features
 
